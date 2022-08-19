@@ -1,0 +1,21 @@
+class Solution(object):
+    def edgeScore(self, edges):
+        """
+        :type edges: List[int]
+        :rtype: int
+        """
+        maxim=0
+        counter=0
+        myDict= {}
+        edgescorelist = []
+        nums= len(edges)
+        for i in edges:
+            myDict[i] = 0
+        for i in range(0,nums):
+            myDict[edges[i]]=myDict[edges[i]]+i 
+        print(myDict)
+        for i in myDict:
+            if myDict[i] > maxim:
+                counter=i
+                maxim=myDict[i]
+        return counter
